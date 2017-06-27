@@ -53,7 +53,7 @@
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "test": "node scripts/test.js --env=jsdom",
-    "fixLint": "eslint './src' --ext .js --fix"
+    "fixLint": "eslint './src' --fix --ext .js"
   },
   "jest": {
     "collectCoverageFrom": [
