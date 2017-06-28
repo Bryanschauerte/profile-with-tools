@@ -1,0 +1,105 @@
+@import '../_shared.scss';
+
+.base {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .base-column {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        .card {
+            @include card-theme;
+            margin: $card-margin;
+            height: 300px;
+            width: 400px;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+
+            .card-header {
+                width: 100%;
+            }
+
+            .inner-card {
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+
+                .column-form {
+                    display: flex;
+                    height: calc(100%-20px);
+                    width: calc(100%-20px);
+                    justify-content: center;
+                    flex-direction: column;
+                    padding: 20px;
+
+                    button {
+                        margin-top: 20px;
+                    }
+            }
+        }
+    }
+}
+
+    .base-row {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .card {
+            @include card-theme;
+            margin: $card-margin;
+            height: 300px;
+            width: 400px;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+
+            .card-header {
+                width: 100%;
+            }
+
+            .inner-card {
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

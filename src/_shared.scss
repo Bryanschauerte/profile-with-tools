@@ -1,0 +1,94 @@
+$color-accent-blue: #3ee;
+$color-accent-green: #3e3;
+$color-grey-tint-one: #222;
+$color-grey-tint-two: #3e3e3e;
+$color-grey-tint-three: #757575;
+$color-grey-tint-Four: #919191;
+$color-grey-tint-five: #acacac;
+$color-grey-tint-six: #c8c8c8;
+$color-grey-tint-seven: #e3e3e3;
+
+$color-primary: #eee;
+$color-primary-light: #fff;
+$color-primary-dark: #bcbcbc;
+
+$color-secondary: #4fc3f7;
+$color-secondary-light: #8bf6ff;
+$color-secondary-dark: #0093c4;
+
+
+
+@mixin card-theme {
+    background-color: $color-primary;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+}
+
+$card-margin: 20px;
+@mixin boarder {
+    border: 2px solid $color-accent-green;
+}
+$mobile-break-point: 320px;
+$mid-break-point: 768px;
+
+@mixin mobile-media-query {
+    @media (max-width: #{$mobile-break-point}) {
+        @content;
+    }
+}
+
+@mixin mid-media-query {
+    @media (min-width: #{$mobile-break-point}) and (max-width: #{$mid-break-point}) {
+        @content;
+    }
+}
+
+@mixin desktop-media-query {
+    @media (min-width: #{$mid-break-point + 1 }) {
+        @content;
+    }
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: relative;
+    background-color: $color-accent-blue;
+
+    &:first-child {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.App {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+// .App-logo {
+//   animation: App-logo-spin infinite 20s linear;
+//   height: 80px;
+// }
+
+// @keyframes App-logo-spin {
+//   from { transform: rotate(0deg); }
+//   to { transform: rotate(360deg); }
+// }
