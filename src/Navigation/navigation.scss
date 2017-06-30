@@ -1,0 +1,74 @@
+@import '../shared.scss';
+
+.navigation {
+    transition: all .3s ease 0s;
+
+    .header-component {
+        border-bottom: 2px solid $color-primary;
+        display: flex;
+        flex: 1 1 30px;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-secondary;
+
+        .header-component-text {
+            font-size: 20px;
+            color: rgba($font-primary-color-dark, .7);
+            margin: 10px;
+            letter-spacing: 2px;
+        }
+    }
+
+    .navigation-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        transition: all .3s ease 0s;
+
+        &.initial {
+            flex-direction: row;
+        }
+
+        &.post-selection {
+            width: 200px;
+        }
+
+        .navigation-button {
+            display: inline-block;
+            font-family: 'roboto', 'helvetica neue', 'helvetica';
+            padding: .5rem 0;
+            margin: .5rem 1rem;
+            width: 11rem;
+            height: 50px;
+            background: transparent;
+            color: $font-primary-color-dark;
+            border: 2px solid $color-primary;
+            transition: all .3s ease 0s;
+            letter-spacing: 1px;
+            opacity: .5;
+            cursor: pointer;
+
+            &.not-selected {
+                &:hover {
+                    border: .5px solid $color-secondary;
+                    background-color: $color-primary-light;
+                    letter-spacing: 3px;
+                    opacity: 1;
+                }
+            }
+
+            &.selected-button {
+                border: .5px solid $color-secondary;
+                background-color: $color-primary;
+                cursor: default;
+                letter-spacing: 3px;
+                opacity: 1;
+            }
+        }
+    }
+}

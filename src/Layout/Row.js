@@ -1,22 +1,19 @@
 import './layout.css';
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class Row extends Component {
-
-    render(){
-        return (
-            <div className="base">
-                <div className="base-row">
-                    {this.props.children}
-                </div>
+const Row = ({ children, className }) =>{
+    return (
+        <div  className={className ? `base ${className}` : 'base'}>
+            <div className="base-row">
+                {children}
             </div>
-        );
-    }
-}
+        </div>);
+};
 
 Row.propTypes = {
-    children: PropTypes.element
+    children: PropTypes.arrayOf(PropTypes.element),
+    className: PropTypes.string
 };
 
 export default Row;

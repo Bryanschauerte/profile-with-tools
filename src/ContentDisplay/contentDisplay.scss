@@ -1,0 +1,17 @@
+@import '../shared.scss';
+
+.content-display-row {
+    .display-container {
+        max-width: 100%;
+        width: 100%;
+        transition: all .3s ease 0s;
+
+        &.inactive {
+            max-width: 0;
+            width: 0;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}

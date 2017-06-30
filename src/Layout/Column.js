@@ -3,20 +3,18 @@ import React, {
 import './layout.css';
 import PropTypes from 'prop-types';
 
-class Column extends Component {
-    render(){
-
-        return (
-            <div className="base">
-                <div className="base-column">
-                    {this.props.children}
-                </div>
-            </div>);
-    }
-}
+const Column = ({ children, className }) =>{
+    return (
+        <div  className={className ? `base ${className}` : 'base'}>
+            <div className="base-column">
+                {children}
+            </div>
+        </div>);
+};
 
 Column.propTypes = {
-    children: PropTypes.element
+    children: PropTypes.arrayOf(PropTypes.element),
+    className: PropTypes.string
 };
 
 export default Column;
