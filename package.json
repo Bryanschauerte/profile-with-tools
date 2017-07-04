@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "lodash": "^4.17.4",
+    "pretty-date": "^0.2.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "redux": "^3.7.1",
+    "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1"
   },
   "devDependencies": {

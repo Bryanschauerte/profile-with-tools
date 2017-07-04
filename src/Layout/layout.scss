@@ -1,0 +1,139 @@
+@import '../shared';
+
+@mixin card-theme {
+    background-color: $color-primary-light;
+    display: flex;
+    flex: 1 1 300px;
+    width: 400px;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+
+    .card-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .inner-card {
+        display: flex;
+        flex: 1 1 300px;
+        margin: 10px;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        &:first-child {
+            display: flex;
+            flex: 1 1 auto;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .column-form {
+            display: flex;
+            height: calc(100%-20px);
+            width: calc(100%-20px);
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+
+            button {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &.half-height {
+        height: 50%;
+    }
+
+    &.half-width {
+        width: 50%;
+    }
+
+    &.full-width {
+        width: 100%;
+    }
+
+    &.side-nav {
+        max-width: 200px;
+    }
+}
+
+.base {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    transition: all .3s ease 0s;
+
+    .base-column {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        flex: 1 1 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        @include mobile-media-query {
+            flex-wrap: nowrap;
+        }
+
+        .card {
+            @include card-theme;
+            margin: $card-margin;
+            @include mobile-media-query {
+                width: auto;
+                flex: 1 1 400px;
+            }
+    }
+}
+
+    .base-row {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include mobile-media-query {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+
+        .card {
+            @include card-theme;
+            margin: $card-margin;
+            @include mobile-media-query {
+                width: auto;
+                flex: 1 1 400px;
+            }
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}

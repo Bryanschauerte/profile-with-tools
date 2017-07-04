@@ -2,8 +2,10 @@ import { createSelector } from 'reselect';
 import { get } from 'lodash';
 import { combineReducers } from 'redux';
 import { navigationState } from '../Navigation/navigationState';
+import { ContentState } from '../ContentDisplay/ContentState';
 
 export const appStates = combineReducers({
+    ContentState,
     navigationState
 });
 

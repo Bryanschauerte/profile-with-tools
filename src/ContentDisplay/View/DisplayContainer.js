@@ -3,56 +3,29 @@ import { PropTypes } from 'prop-types';
 import Card from '../../Layout/Card';
 import classnames from 'classnames';
 import '../contentDisplay.css';
+import About from './About';
+import Tools from './Tools';
+import Projects from './Projects';
+import Contact from './Contact';
+
 
 class DisplayContainer extends Component {
 
     renderDisplay(){
         switch (this.props.display) {
             case 'about':
-                return (
-                    <div>
-                        <div>
-                            <h1 className="inner-card-title">About</h1>
-                        </div>
-                        <div>
-                            <p> bladkaljf alksjf alsdkjf asldj fsadf</p>
-                        </div>
-                    </div>);
+                return <About/>;
 
             case 'projects':
-                return (
-                    <div>
-                        <div>
-                            <h1>About</h1>
-                        </div>
-                        <div>
-                            <p> bladkaljf alksjf alsdkjf asldj fsadf</p>
-                        </div>
-                    </div>);
+                return <Projects/>;
 
             case 'tools':
-                return (
-                    <div>
-                        <div>
-                            <h1>About</h1>
-                        </div>
-                        <div>
-                            <p> bladkaljf alksjf alsdkjf asldj fsadf</p>
-                        </div>
-                    </div>);
+                return <Tools/>;
 
             case 'contact':
-                return (
-                    <div>
-                        <div>
-                            <h1>About</h1>
-                        </div>
-                        <div>
-                            <p> bladkaljf alksjf alsdkjf asldj fsadf</p>
-                        </div>
-                    </div>);
+                return <Contact/>;
             default:
-
+                null;
         }
     }
     render(){
@@ -61,14 +34,9 @@ class DisplayContainer extends Component {
         });
 
         return (
-            <Card className={displayClasses} headerComponent={<h1>{this.props.display.toUpperCase()}</h1>}>
-                <div>
-                    <div>
-                        <h1>About</h1>
-                    </div>
-                    <div>
-                        <p> bladkaljf alksjf alsdkjf asldj fsadf</p>
-                    </div>
+            <Card className={displayClasses} headerComponent={<h1 className="section-title">{this.props.display.toUpperCase()}</h1>}>
+                <div className="internal">
+                    {this.renderDisplay()}
                 </div>
             </Card>);
     }

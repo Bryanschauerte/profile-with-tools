@@ -32,10 +32,13 @@
 
         &.initial {
             flex-direction: row;
+            justify-content: center;
+            display: flex;
+            flex: 1 1 auto;
         }
 
         &.post-selection {
-            width: 200px;
+            flex: 1 1 200px;
         }
 
         .navigation-button {

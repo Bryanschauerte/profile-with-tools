@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { changeDisplay } from '../Navigation/navigationActions';
-import { getNavigationValueByName } from '../Navigation/navigationState';
 import './contentDisplay.css';
 import Navigation from '../Navigation/Navigation';
 import Row from '../Layout/Row';
 import DisplayContainer from './View/DisplayContainer';
+import { getNavigationValueByName } from '../Navigation/navigationState';
 
 class ContentDisplay extends Component {
 
@@ -21,10 +21,14 @@ class ContentDisplay extends Component {
 }
 ContentDisplay.propTypes = {
     display: PropTypes.string,
-    handleChangeDisplay: PropTypes.func
+    getRepositories: PropTypes.func,
+    isLoading: PropTypes.bool,
+    repositories: PropTypes.array
 };
 
 const mapStateToProps = (state)=> {
+    console.log(state, 'state');
+
     return {
         display: getNavigationValueByName(state, 'display')
     };
@@ -35,4 +39,5 @@ const mapDispatchToProp = (dispatch) => {
         handleChangeDisplay: (targetDisplay) => dispatch(changeDisplay(targetDisplay))
     };
 };
+
 export default connect(mapStateToProps, mapDispatchToProp)(ContentDisplay);
