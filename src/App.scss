@@ -8,10 +8,12 @@ html {
 #root {
     height: 100%;
     width: 100%;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
-    display: relative;
+    display: flex;
+    flex: 1 1 100%;
+    width: 100%;
 
     &:first-child {
         height: 100%;

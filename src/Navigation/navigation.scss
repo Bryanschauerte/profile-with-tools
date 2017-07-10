@@ -1,13 +1,86 @@
 @import '../shared.scss';
 
 .navigation {
+    display: flex;
     transition: all .3s ease 0s;
+    flex: 1 1 50%;
+    max-width: 50%;
+
+    &.initial-nav {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex: 1 1 100%;
+        max-width: 50%;
+
+        @include mobile-media-query {
+            flex: 1 1 100%;
+            position: absolute;
+            top: calc(50% - 100px);
+            flex-direction: row;
+            height: 200px;
+            max-height: 200px;
+            max-width: 90%;
+        }
+    }
+
+    @include mobile-media-query {
+        flex: 1 1 120px;
+        max-height: 120px;
+        max-width: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.side-nav {
+        max-width: 200px;
+        height: 200px;
+        flex-direction: column;
+
+        @include mobile-media-query {
+            &.navigation {
+                flex: 1 1 100px;
+                // max-height: 100px;
+                flex-direction: column;
+                width: 100%;
+                min-width: 100%;
+                margin: 0;
+
+                .card-header {
+                    display: flex;
+                    flex: 1 1 50px;
+                    justify-content: center;
+                    align-items: center;
+
+                    .header-component {
+
+                        display: flex;
+                        flex: 1 1 45px;
+                        align-items: center;
+                        justify-content: center;
+
+                        .header-component-text {
+                            // padding-top: 5px;
+                            display: flex;
+                            flex: 1 1 30px;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+
+                .inner-card {
+                    margin: 0;
+                }
+            }
+        }
+    }
 
     .header-component {
-        border-bottom: 2px solid $color-primary;
         display: flex;
-        flex: 1 1 30px;
-        height: auto;
+        flex: 1 1 45px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -23,22 +96,20 @@
 
     .navigation-container {
         display: flex;
-        flex-direction: column;
+        flex: 1 1 100%;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-        height: 100%;
         width: 100%;
         transition: all .3s ease 0s;
 
-        &.initial {
-            flex-direction: row;
-            justify-content: center;
-            display: flex;
-            flex: 1 1 auto;
-        }
-
         &.post-selection {
-            flex: 1 1 200px;
+            flex: 1 1 100px;
+            flex-direction: column;
+            @include mobile-media-query {
+                flex: 1 1 100px;
+                flex-direction: row;
+            }
         }
 
         .navigation-button {
@@ -55,6 +126,9 @@
             letter-spacing: 1px;
             opacity: .5;
             cursor: pointer;
+            @include mobile-media-query {
+                height: 40px;
+            }
 
             &.not-selected {
                 &:hover {

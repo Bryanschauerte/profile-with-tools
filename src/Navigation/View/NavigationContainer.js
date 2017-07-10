@@ -5,6 +5,7 @@ import NavigationButton from '../../Elements/NavigationButton';
 import classNames from 'classnames';
 import { changeDisplay } from '../navigationActions';
 import { getNavigationValueByName } from '../navigationState';
+import '../navigation.css';
 
 class NavigationContainer extends Component {
     constructor(props){
@@ -18,37 +19,27 @@ class NavigationContainer extends Component {
 
     render(){
         const navigationClass = classNames('navigation-container', {
-            'initial': (this.props.display === 'initial'),
+            'initial-nav': (this.props.display === 'initial'),
             'post-selection': (this.props.display !== 'initial')
         });
 
         return (
-            <div className="navigation-container">
-                <div>
-                    <h1>Intro content</h1>
-                </div>
-                <div className={navigationClass}>
-                    <NavigationButton
-                        isSelected={this.props.display === 'about'}
-                        label="About"
-                        classname="navigation-button"
-                        handleClick={()=>this.handleClick('about')}/>
-                    <NavigationButton
-                        isSelected={this.props.display === 'tools'}
-                        label="Tools"
-                        classname="navigation-button"
-                        handleClick={()=>this.handleClick('tools')}/>
-                    <NavigationButton
-                        label="Projects"
-                        isSelected={this.props.display === 'projects'}
-                        classname="navigation-button"
-                        handleClick={()=>this.handleClick('projects')}/>
-                    <NavigationButton
-                        label="Contact"
-                        isSelected={this.props.display === 'contact'}
-                        classname="navigation-button"
-                        handleClick={()=>this.handleClick('contact')}/>
-                </div>
+            <div className={navigationClass}>
+                <NavigationButton
+                    isSelected={this.props.display === 'about'}
+                    label="About"
+                    classname="navigation-button"
+                    handleClick={()=>this.handleClick('about')}/>
+                <NavigationButton
+                    label="Projects"
+                    isSelected={this.props.display === 'projects'}
+                    classname="navigation-button"
+                    handleClick={()=>this.handleClick('projects')}/>
+                <NavigationButton
+                    label="Contact"
+                    isSelected={this.props.display === 'contact'}
+                    classname="navigation-button"
+                    handleClick={()=>this.handleClick('contact')}/>
             </div>
         );
     }

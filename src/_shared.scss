@@ -10,6 +10,7 @@ $color-grey-tint-five: #acacac;
 $color-grey-tint-six: #c8c8c8;
 $color-grey-tint-seven: #e3e3e3;
 
+$box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
 
 // theme colors
 $color-primary: #eee;
@@ -26,7 +27,7 @@ $font-primary-color-dark: #000;
 
 // theme sizes
 $card-margin: 20px;
-$mobile-break-point: 375px;
+$mobile-break-point: 420px;
 $mid-break-point: 768px;
 
 @mixin mobile-media-query {
@@ -45,4 +46,38 @@ $mid-break-point: 768px;
     @media (min-width: #{$mid-break-point + 1 }) {
         @content;
     }
+}
+
+@keyframes minor-zoom-transform {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes minor-x-strech-transform {
+    0% {
+        transform: scalex(1);
+    }
+
+    50% {
+        transform: scalex(1.2);
+    }
+
+    100% {
+        transform: scalex(1);
+    }
+}
+//background
+
+.svg-background {
+    height: 100%;
+    width: 100%;
 }

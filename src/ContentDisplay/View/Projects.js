@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getContentStateByName } from '../ContentState';
 import { makeGithubFetch } from '../ContentActions';
 import RepositoryView from './RepositoryView';
+import '../contentDisplay.css';
 
 class About extends Component {
     constructor(){

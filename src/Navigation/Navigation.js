@@ -14,12 +14,13 @@ import './navigation.css';
 class Navigation extends Component {
     render(){
 
-        const containerClassName = classNames('half-width half-height navigation', {
+        const containerClassName = classNames('navigation', {
+            'initial-nav' :(this.props.display === 'initial'),
             'side-nav': (this.props.display !== 'initial')
         });
 
         return (
-            <Card headerComponent={<HeaderComponent displayText="sideNave"/>} className={containerClassName}>
+            <Card headerComponent={<HeaderComponent displayText="Welcome"/>} className={containerClassName}>
                 <NavigationContainer/>
             </Card>
         );
