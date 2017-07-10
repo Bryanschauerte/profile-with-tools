@@ -1,108 +1,41 @@
 @import '../shared.scss';
 
 .content-display-row {
+    display: flex;
+    flex: 1 1 100%;
 
     .display-container {
         display: flex;
         flex: 1 1 100%;
         max-width: 100%;
-        height: 900px;
+        height: 90%;
         width: 100%;
         position: relative;
         overflow-y: scroll;
-        perspective: 800px;
         transition: all .3s ease 0s;
 
         .section-title {
             font-weight: 400;
             letter-spacing: 2px;
-            display: flex;
-            flex: 1 1 auto;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .repository-views {
+            background-color: $color-primary;
+            color: $color-secondary;
+            display: block;
+            line-height: 40px;
+            height: 40px;
+            text-align: right;
             width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: column;
 
-            .inner-card {
-
-            }
-            .repository-number {
-                display: flex;
-                height: 20px;
-                width: 100%;
-                justify-content: flex-end;
-                margin-right: 20px;
-                font-size: 15px;
-                font-weight: 500;
-
-            }
-
-            .repository-view {
-                display: flex;
-                flex: 1 1 250px;
-                width: 90%;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 20px;
-                padding-bottom: 20px;
-                border-left: 4px solid $color-accent-blue;
-                border-bottom: 4px solid $color-grey-tint-five;
-
-                .repository-description {
-                    display: flex;
-                    flex: 1 1 70px;
-                    width: 100%;
-                    justify-content: center;
-                    text-indent: 20px;
-                    align-items: center;
-                    font-size: 20px;
-                    font-weight: normal;
-                    flex-wrap: wrap;
-                }
-
-                .repository-view-intro {
-                    display: flex;
-                    flex: 1 1 50px;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 30px;
-                    letter-spacing: 2px;
-                    border-bottom: 1px solid $color-accent-blue;
-                    font-weight: 300;
-                }
-
-                .repository-url {
-                    width: 50%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 5px;
-
-                    a {
-                        display: flex;
-                        text-decoration: none;
-                        color: $color-accent-blue;
-                        cursor: pointer;
-                        letter-spacing: 4px;
-                        font-size: 17px;
-                    }
-                }
-
-                .repository-created_at {
-                    display: flex;
-                    flex: 1 1 40px;
-                    width: 100%;
-                    justify-content: center;
-                    align-items: center;
-
-                }
+            .title {
+                flex: 1 1 100%;
+                padding: 0 50px;
+                font-weight: 400;
+                letter-spacing: 2px;
+                display: block;
+                font-size: 20px;
+                line-height: 40px;
+                height: 40px;
+                text-align: right;
+                border-bottom: 2px solid $color-secondary;
             }
         }
 
@@ -114,32 +47,421 @@
             margin: 0;
         }
 
-        .internal {
+        &.projectsActive {
+            display: flex;
+            flex: 1 1 100%;
+            flex-direction: row;
+
+            .repository-views {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                flex: 1 1 100%;
+                overflow-y: scroll;
+
+                .repository-view {
+                    display: flex;
+                    flex: 1 1 250px;
+                    min-height: 250px;
+                    width: 90%;
+                    background-color: $color-primary-light;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 20px 0;
+                    padding: 20px 20px 0;
+                    border-left: 4px solid $color-secondary;
+                    border-bottom: 4px solid $color-grey-tint-five;
+
+                    @include mobile-media-query {
+                        flex: 1 1 300px;
+                        min-height: 300px;
+                        width: 100%;
+                        padding: 0 20px;
+                    }
+
+                    .repository-number {
+                        display: flex;
+                        height: 20px;
+                        width: 100%;
+                        justify-content: flex-end;
+                        margin-right: 20px;
+                        font-size: 15px;
+                        font-weight: 500;
+
+                    }
+
+                    .repository-description {
+                        display: flex;
+                        flex: 1 1 70px;
+                        width: 90%;
+                        justify-content: center;
+                        text-indent: 20px;
+                        align-items: center;
+                        font-size: 20px;
+                        font-weight: normal;
+                        flex-wrap: wrap;
+                    }
+
+                    .repository-view-intro {
+                        display: flex;
+                        flex: 1 1 50px;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 28px;
+                        letter-spacing: 2px;
+                        border-bottom: 1px solid $color-secondary;
+                        font-weight: 300;
+                        @include mobile-media-query {
+                            width: 100%;
+                            margin: 0 20px;
+                        }
+                    }
+
+                    .repository-url {
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 5px;
+                        @include mobile-media-query {
+                            width: 100%;
+                            padding: 15px;
+                        }
+
+                        a {
+                            display: flex;
+                            text-decoration: none;
+                            color: $color-secondary;
+                            cursor: pointer;
+                            letter-spacing: 4px;
+                            font-size: 17px;
+                        }
+                    }
+
+                    .repository-created_at {
+                        display: flex;
+                        flex: 1 1 40px;
+                        width: 90%;
+                        justify-content: center;
+                        align-items: center;
+                        text-indent: 30px;
+                    }
+                }
+            }
+        }
+
+        &.contactActive {
+            display: flex;
+            flex: 1 1 100%;
             width: 100%;
-            height: 100%;
-            position: absolute;
-            transform-style: preserve-3d;
+
+            .contact-container {
+                display: flex;
+                flex-direction: column;
+                flex: 1 1 80%;
+                max-width: 80%;
+                padding: 0 20px;
+                justify-content: space-between;
+                align-items: center;
+                transition: all .3s ease 0s;
+
+                a {
+                    text-decoration: none;
+                }
+
+                .link {
+                    display: flex;
+                    text-decoration: none;
+                    color: $color-secondary;
+                    cursor: pointer;
+                    letter-spacing: 4px;
+                    font-size: 17px;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .intro-text {
+                    display: flex;
+                    flex: 1 1 40px;
+                    font-size: 30px;
+                    font-weight: 500;
+                    letter-spacing: 3px;
+                    padding: 20px 0;
+                    width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .git-hub {
+                    flex: 1 1 200px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .octocat-logo {
+                        height: 100px;
+                        width: auto;
+                        display: flex;
+                        flex: 1 1 100%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-bottom: 20px;
+
+                        &:hover {
+                            animation: minor-zoom-transform infinite 1s linear;
+                        }
+                    }
+                }
+
+                .linked-in {
+                    flex: 1 1 200px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .linked-in-logo {
+                        height: 80px;
+                        width: auto;
+                        display: flex;
+                        flex: 1 1 100%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-bottom: 20px;
+
+                        &:hover {
+                            animation: minor-x-strech-transform infinite 1s linear;
+                        }
+                    }
+                }
+
+                .email {
+                    flex: 1 1 200px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .gmail-logo {
+                        height: 100px;
+                        width: auto;
+                        display: flex;
+                        flex: 1 1 100%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-bottom: 20px;
+
+                        &:hover {
+                            animation: minor-x-strech-transform infinite 1s linear;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.aboutActive {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            flex: 1 1 100%;
+            overflow-x: hidden;
+
+            @include mobile-media-query {
+                margin: 0;
+                padding: 0;
+
+                .card-header {
+                    display: flex;
+                    justify-content: flex-start;
+                }
+            }
+
+            .section-title {
+                flex: 1 1 20%;
+                max-height: 40px;
+
+                .title {
+                    flex: 1 1 100%;
+                }
+            }
+
+            .about-view {
+                display: flex;
+                flex: 2 1 80%;
+                letter-spacing: 2px;
+                margin-top: 20px;
+
+                .content {
+                    display: flex;
+                    flex: 1 1 100%;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+
+                    .about-title {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        margin-left: 100%;
+                        flex: 1 2 100px;
+                        flex-grow: 1;
+                        flex-shrink: 1;
+                        flex-basis: 100px;
+                        max-height: 100px;
+                        width: 90%;
+                        @include mobile-media-query {
+                            margin: 0;
+                            padding: 0;
+                            width: 100%;
+                            min-height: 70px;
+                            max-height: 100px;
+                        }
+
+                        .name {
+                            display: flex;
+                            flex: 1 1 auto;
+                            min-height: 20px;
+                            font-weight: 400;
+                            font-size: 20px;
+                            letter-spacing: 4px;
+                            margin: 0;
+                            width: 50%;
+                            color: $color-secondary;
+                            @include mobile-media-query {
+                                margin: 0;
+                                padding: 10px 0;
+                                width: 100%;
+                                justify-content: flex-end;
+                            }
+                        }
+
+                        .sub-title {
+                            display: flex;
+                            flex: 1 1 auto;
+                            margin: 0;
+                            padding: 10px;
+                            width: 50%;
+                            color: $color-secondary;
+                            justify-content: flex-end;
+                            align-items: center;
+                            letter-spacing: 2px;
+                            background-color: $color-primary;
+                            border-top: 2px solid $color-secondary;
+                            @include mobile-media-query {
+                                margin: 0;
+                                padding: 10px 0;
+                                width: 100%;
+                                margin-left: auto;
+                            }
+                        }
+                    }
+
+                    .tinkering-container {
+                        width: 90%;
+                        margin-top: 20px;
+                        letter-spacing: 2px;
+                        flex: 2 1 100px;
+                        max-height: 200px;
+                        font-size: 20px;
+
+                        @include mobile-media-query {
+                            margin: 0;
+                            padding: 10px 0;
+                        }
+
+                        ul {
+                            display: flex;
+                            flex: 1 1 100%;
+                            flex-direction: column;
+                            font-size: 15px;
+                            list-style: none;
+                            width: 90%;
+                            font-weight: 500;
+                            margin-top: auto;
+                            @include mobile-media-query {
+                                margin: 0;
+                                padding: 10px;
+                            }
+
+                            li {
+                                font-weight: 300;
+                                flex-wrap: wrap;
+                                padding: 1px;
+                                width: 100%;
+                                text-indent: 10px;
+                            }
+                        }
+                    }
+
+                    .projects-container {
+                        width: 90%;
+                        margin-top: 10px;
+                        letter-spacing: 2px;
+                        flex: 2 1 100px;
+                        max-height: 200px;
+                        font-size: 20px;
+                        @include mobile-media-query {
+                            margin: 0;
+                        }
+
+                        ul {
+                            margin-top: auto;
+                            display: flex;
+                            flex: 1 1 100%;
+                            flex-direction: column;
+                            font-size: 15px;
+                            font-weight: 500;
+                            list-style: none;
+                            width: 90%;
+                            @include mobile-media-query {
+                                margin: 0;
+                                padding: 10px;
+                            }
+
+                            li {
+                                font-weight: 300;
+                                flex-wrap: wrap;
+                                padding: 5px;
+                                width: 100%;
+                                text-indent: 10px;
+                            }
+                        }
+                    }
+
+                    footer {
+                        display: flex;
+                        flex: 1 1 50px;
+                        max-height: 60px;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 10px;
+                        @include mobile-media-query {
+                            margin: 0;
+                            padding: 10px;
+                        }
+
+                        a {
+                            display: flex;
+                            text-decoration: none;
+                            color: $color-secondary;
+                            cursor: pointer;
+                            letter-spacing: 4px;
+                            font-size: 17px;
+                            transition: all .3s ease 0s;
+
+                            &:hover {
+                                padding: 20px;
+                                color: $color-secondary;
+                                background-color: $color-primary;
+                                letter-spacing: 8px;
+                                border: .5px solid $color-grey-tint-three;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
-}
-
-.about-view {
-    &.initial {
-        //
-    }
-
-    .about-title {
-        .name {
-            //
-        }
-
-        .sub-title {
-            //
-        }
-    }
-
-    .content {
-        //
-    }
-
 }

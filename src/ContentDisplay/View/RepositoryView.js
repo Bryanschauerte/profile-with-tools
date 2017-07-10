@@ -1,11 +1,11 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import prettydate from 'pretty-date';
-import Card from '../../Layout/Card';
+import '../contentDisplay.css';
 
 const RepositoryView = ({ repo, repoIndex }) => {
     return (
-        <Card className="repository-view">
+        <div className="repository-view">
             <div className="repository-number">
                 {repoIndex + 1} of the 30 latest
             </div>
@@ -21,7 +21,7 @@ const RepositoryView = ({ repo, repoIndex }) => {
             <div className="repository-url">
                 <a target="_blank" rel="noopener noreferrer" href={repo.html_url}>Link to see on GitHub</a>
             </div>
-        </Card>
+        </div>
     );
 };
 

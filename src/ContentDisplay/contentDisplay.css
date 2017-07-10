@@ -1,91 +1,390 @@
-.content-display-row .display-container {
+@keyframes minor-zoom-transform {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes minor-x-strech-transform {
+  0% {
+    transform: scalex(1); }
+  50% {
+    transform: scalex(1.2); }
+  100% {
+    transform: scalex(1); } }
+
+.svg-background {
+  height: 100%;
+  width: 100%; }
+
+.content-display-row {
   display: flex;
-  flex: 1 1 100%;
-  max-width: 100%;
-  height: 900px;
-  width: 100%;
-  position: relative;
-  overflow-y: scroll;
-  perspective: 800px;
-  transition: all .3s ease 0s; }
-  .content-display-row .display-container .section-title {
-    font-weight: 400;
-    letter-spacing: 2px;
+  flex: 1 1 100%; }
+  .content-display-row .display-container {
     display: flex;
-    flex: 1 1 auto;
-    justify-content: center;
-    align-items: center; }
-  .content-display-row .display-container .repository-views {
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: 90%;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column; }
-    .content-display-row .display-container .repository-views .repository-number {
-      display: flex;
-      height: 20px;
-      width: 100%;
-      justify-content: flex-end;
-      margin-right: 20px;
-      font-size: 15px;
-      font-weight: 500; }
-    .content-display-row .display-container .repository-views .repository-view {
-      display: flex;
-      flex: 1 1 250px;
-      width: 90%;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-      border-left: 4px solid #3ee;
-      border-bottom: 4px solid #acacac; }
-      .content-display-row .display-container .repository-views .repository-view .repository-description {
-        display: flex;
-        flex: 1 1 70px;
-        width: 100%;
-        justify-content: center;
-        text-indent: 20px;
-        align-items: center;
-        font-size: 20px;
-        font-weight: normal;
-        flex-wrap: wrap; }
-      .content-display-row .display-container .repository-views .repository-view .repository-view-intro {
-        display: flex;
-        flex: 1 1 50px;
-        justify-content: center;
-        align-items: center;
-        font-size: 30px;
+    position: relative;
+    overflow-y: scroll;
+    transition: all .3s ease 0s; }
+    .content-display-row .display-container .section-title {
+      font-weight: 400;
+      letter-spacing: 2px;
+      background-color: #eee;
+      color: #4fc3f7;
+      display: block;
+      line-height: 40px;
+      height: 40px;
+      text-align: right;
+      width: 100%; }
+      .content-display-row .display-container .section-title .title {
+        flex: 1 1 100%;
+        padding: 0 50px;
+        font-weight: 400;
         letter-spacing: 2px;
-        border-bottom: 1px solid #3ee;
-        font-weight: 300; }
-      .content-display-row .display-container .repository-views .repository-view .repository-url {
-        width: 50%;
+        display: block;
+        font-size: 20px;
+        line-height: 40px;
+        height: 40px;
+        text-align: right;
+        border-bottom: 2px solid #4fc3f7; }
+    .content-display-row .display-container.inactive {
+      max-width: 0;
+      width: 0;
+      overflow: hidden;
+      padding: 0;
+      margin: 0; }
+    .content-display-row .display-container.projectsActive {
+      display: flex;
+      flex: 1 1 100%;
+      flex-direction: row; }
+      .content-display-row .display-container.projectsActive .repository-views {
+        width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        padding: 5px; }
-        .content-display-row .display-container .repository-views .repository-view .repository-url a {
+        flex-direction: column;
+        flex: 1 1 100%;
+        overflow-y: scroll; }
+        .content-display-row .display-container.projectsActive .repository-views .repository-view {
+          display: flex;
+          flex: 1 1 250px;
+          min-height: 250px;
+          width: 90%;
+          background-color: #fff;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 20px 0;
+          padding: 20px 20px 0;
+          border-left: 4px solid #4fc3f7;
+          border-bottom: 4px solid #acacac; }
+          @media (max-width: 420px) {
+            .content-display-row .display-container.projectsActive .repository-views .repository-view {
+              flex: 1 1 300px;
+              min-height: 300px;
+              width: 100%;
+              padding: 0 20px; } }
+          .content-display-row .display-container.projectsActive .repository-views .repository-view .repository-number {
+            display: flex;
+            height: 20px;
+            width: 100%;
+            justify-content: flex-end;
+            margin-right: 20px;
+            font-size: 15px;
+            font-weight: 500; }
+          .content-display-row .display-container.projectsActive .repository-views .repository-view .repository-description {
+            display: flex;
+            flex: 1 1 70px;
+            width: 90%;
+            justify-content: center;
+            text-indent: 20px;
+            align-items: center;
+            font-size: 20px;
+            font-weight: normal;
+            flex-wrap: wrap; }
+          .content-display-row .display-container.projectsActive .repository-views .repository-view .repository-view-intro {
+            display: flex;
+            flex: 1 1 50px;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #4fc3f7;
+            font-weight: 300; }
+            @media (max-width: 420px) {
+              .content-display-row .display-container.projectsActive .repository-views .repository-view .repository-view-intro {
+                width: 100%;
+                margin: 0 20px; } }
+          .content-display-row .display-container.projectsActive .repository-views .repository-view .repository-url {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px; }
+            @media (max-width: 420px) {
+              .content-display-row .display-container.projectsActive .repository-views .repository-view .repository-url {
+                width: 100%;
+                padding: 15px; } }
+            .content-display-row .display-container.projectsActive .repository-views .repository-view .repository-url a {
+              display: flex;
+              text-decoration: none;
+              color: #4fc3f7;
+              cursor: pointer;
+              letter-spacing: 4px;
+              font-size: 17px; }
+          .content-display-row .display-container.projectsActive .repository-views .repository-view .repository-created_at {
+            display: flex;
+            flex: 1 1 40px;
+            width: 90%;
+            justify-content: center;
+            align-items: center;
+            text-indent: 30px; }
+    .content-display-row .display-container.contactActive {
+      display: flex;
+      flex: 1 1 100%;
+      width: 100%; }
+      .content-display-row .display-container.contactActive .contact-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 80%;
+        max-width: 80%;
+        padding: 0 20px;
+        justify-content: space-between;
+        align-items: center;
+        transition: all .3s ease 0s; }
+        .content-display-row .display-container.contactActive .contact-container a {
+          text-decoration: none; }
+        .content-display-row .display-container.contactActive .contact-container .link {
           display: flex;
           text-decoration: none;
-          color: #3ee;
+          color: #4fc3f7;
           cursor: pointer;
           letter-spacing: 4px;
-          font-size: 17px; }
-      .content-display-row .display-container .repository-views .repository-view .repository-created_at {
+          font-size: 17px;
+          justify-content: center;
+          align-items: center; }
+        .content-display-row .display-container.contactActive .contact-container .intro-text {
+          display: flex;
+          flex: 1 1 40px;
+          font-size: 30px;
+          font-weight: 500;
+          letter-spacing: 3px;
+          padding: 20px 0;
+          width: 100%;
+          justify-content: center;
+          align-items: center; }
+        .content-display-row .display-container.contactActive .contact-container .git-hub {
+          flex: 1 1 200px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          .content-display-row .display-container.contactActive .contact-container .git-hub .octocat-logo {
+            height: 100px;
+            width: auto;
+            display: flex;
+            flex: 1 1 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px; }
+            .content-display-row .display-container.contactActive .contact-container .git-hub .octocat-logo:hover {
+              animation: minor-zoom-transform infinite 1s linear; }
+        .content-display-row .display-container.contactActive .contact-container .linked-in {
+          flex: 1 1 200px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          .content-display-row .display-container.contactActive .contact-container .linked-in .linked-in-logo {
+            height: 80px;
+            width: auto;
+            display: flex;
+            flex: 1 1 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px; }
+            .content-display-row .display-container.contactActive .contact-container .linked-in .linked-in-logo:hover {
+              animation: minor-x-strech-transform infinite 1s linear; }
+        .content-display-row .display-container.contactActive .contact-container .email {
+          flex: 1 1 200px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          .content-display-row .display-container.contactActive .contact-container .email .gmail-logo {
+            height: 100px;
+            width: auto;
+            display: flex;
+            flex: 1 1 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px; }
+            .content-display-row .display-container.contactActive .contact-container .email .gmail-logo:hover {
+              animation: minor-x-strech-transform infinite 1s linear; }
+    .content-display-row .display-container.aboutActive {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      flex: 1 1 100%;
+      overflow-x: hidden; }
+      @media (max-width: 420px) {
+        .content-display-row .display-container.aboutActive {
+          margin: 0;
+          padding: 0; }
+          .content-display-row .display-container.aboutActive .card-header {
+            display: flex;
+            justify-content: flex-start; } }
+      .content-display-row .display-container.aboutActive .section-title {
+        flex: 1 1 20%;
+        max-height: 40px; }
+        .content-display-row .display-container.aboutActive .section-title .title {
+          flex: 1 1 100%; }
+      .content-display-row .display-container.aboutActive .about-view {
         display: flex;
-        flex: 1 1 40px;
-        width: 100%;
-        justify-content: center;
-        align-items: center; }
-  .content-display-row .display-container.inactive {
-    max-width: 0;
-    width: 0;
-    overflow: hidden;
-    padding: 0;
-    margin: 0; }
-  .content-display-row .display-container .internal {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transform-style: preserve-3d; }
+        flex: 2 1 80%;
+        letter-spacing: 2px;
+        margin-top: 20px; }
+        .content-display-row .display-container.aboutActive .about-view .content {
+          display: flex;
+          flex: 1 1 100%;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          position: relative; }
+          .content-display-row .display-container.aboutActive .about-view .content .about-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-left: 100%;
+            flex: 1 2 100px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 100px;
+            max-height: 100px;
+            width: 90%; }
+            @media (max-width: 420px) {
+              .content-display-row .display-container.aboutActive .about-view .content .about-title {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                min-height: 70px;
+                max-height: 100px; } }
+            .content-display-row .display-container.aboutActive .about-view .content .about-title .name {
+              display: flex;
+              flex: 1 1 auto;
+              min-height: 20px;
+              font-weight: 400;
+              font-size: 20px;
+              letter-spacing: 4px;
+              margin: 0;
+              width: 50%;
+              color: #4fc3f7; }
+              @media (max-width: 420px) {
+                .content-display-row .display-container.aboutActive .about-view .content .about-title .name {
+                  margin: 0;
+                  padding: 10px 0;
+                  width: 100%;
+                  justify-content: flex-end; } }
+            .content-display-row .display-container.aboutActive .about-view .content .about-title .sub-title {
+              display: flex;
+              flex: 1 1 auto;
+              margin: 0;
+              padding: 10px;
+              width: 50%;
+              color: #4fc3f7;
+              justify-content: flex-end;
+              align-items: center;
+              letter-spacing: 2px;
+              background-color: #eee;
+              border-top: 2px solid #4fc3f7; }
+              @media (max-width: 420px) {
+                .content-display-row .display-container.aboutActive .about-view .content .about-title .sub-title {
+                  margin: 0;
+                  padding: 10px 0;
+                  width: 100%;
+                  margin-left: auto; } }
+          .content-display-row .display-container.aboutActive .about-view .content .tinkering-container {
+            width: 90%;
+            margin-top: 20px;
+            letter-spacing: 2px;
+            flex: 2 1 100px;
+            max-height: 200px;
+            font-size: 20px; }
+            @media (max-width: 420px) {
+              .content-display-row .display-container.aboutActive .about-view .content .tinkering-container {
+                margin: 0;
+                padding: 10px 0; } }
+            .content-display-row .display-container.aboutActive .about-view .content .tinkering-container ul {
+              display: flex;
+              flex: 1 1 100%;
+              flex-direction: column;
+              font-size: 15px;
+              list-style: none;
+              width: 90%;
+              font-weight: 500;
+              margin-top: auto; }
+              @media (max-width: 420px) {
+                .content-display-row .display-container.aboutActive .about-view .content .tinkering-container ul {
+                  margin: 0;
+                  padding: 10px; } }
+              .content-display-row .display-container.aboutActive .about-view .content .tinkering-container ul li {
+                font-weight: 300;
+                flex-wrap: wrap;
+                padding: 1px;
+                width: 100%;
+                text-indent: 10px; }
+          .content-display-row .display-container.aboutActive .about-view .content .projects-container {
+            width: 90%;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            flex: 2 1 100px;
+            max-height: 200px;
+            font-size: 20px; }
+            @media (max-width: 420px) {
+              .content-display-row .display-container.aboutActive .about-view .content .projects-container {
+                margin: 0; } }
+            .content-display-row .display-container.aboutActive .about-view .content .projects-container ul {
+              margin-top: auto;
+              display: flex;
+              flex: 1 1 100%;
+              flex-direction: column;
+              font-size: 15px;
+              font-weight: 500;
+              list-style: none;
+              width: 90%; }
+              @media (max-width: 420px) {
+                .content-display-row .display-container.aboutActive .about-view .content .projects-container ul {
+                  margin: 0;
+                  padding: 10px; } }
+              .content-display-row .display-container.aboutActive .about-view .content .projects-container ul li {
+                font-weight: 300;
+                flex-wrap: wrap;
+                padding: 5px;
+                width: 100%;
+                text-indent: 10px; }
+          .content-display-row .display-container.aboutActive .about-view .content footer {
+            display: flex;
+            flex: 1 1 50px;
+            max-height: 60px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px; }
+            @media (max-width: 420px) {
+              .content-display-row .display-container.aboutActive .about-view .content footer {
+                margin: 0;
+                padding: 10px; } }
+            .content-display-row .display-container.aboutActive .about-view .content footer a {
+              display: flex;
+              text-decoration: none;
+              color: #4fc3f7;
+              cursor: pointer;
+              letter-spacing: 4px;
+              font-size: 17px;
+              transition: all .3s ease 0s; }
+              .content-display-row .display-container.aboutActive .about-view .content footer a:hover {
+                padding: 20px;
+                color: #4fc3f7;
+                background-color: #eee;
+                letter-spacing: 8px;
+                border: 0.5px solid #757575; }

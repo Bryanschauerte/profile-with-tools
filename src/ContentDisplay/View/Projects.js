@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getContentStateByName } from '../ContentState';
 import { makeGithubFetch } from '../ContentActions';
 import RepositoryView from './RepositoryView';
+import '../contentDisplay.css';
 
 class About extends Component {
     constructor(){
@@ -32,8 +33,6 @@ class About extends Component {
     }
 
     render(){
-        console.log(this.props, 'this props');
-
         return this.renderRepos();
     }
 }
@@ -43,8 +42,6 @@ About.propTypes = {
     repositories: PropTypes.array
 };
 const mapStateToProps = (state)=> {
-    console.log(state, 'state');
-
     return {
         isLoading: getContentStateByName(state, 'loading'),
         repositories: getContentStateByName(state, 'repositories')

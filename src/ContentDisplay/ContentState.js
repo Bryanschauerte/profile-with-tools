@@ -22,8 +22,6 @@ export const ContentState = (state = {}, action = {}) =>{
             return isEqual(newState, state) ? state : newState;
 
         case GITHUB_REPOSITORIES_SUCCESS:
-            console.log(action, 'ACTIOOON');
-
             newState = {
                 ...state,
                 loading: false,
