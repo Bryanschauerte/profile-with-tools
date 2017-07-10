@@ -1,6 +1,5 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import Card from '../../Layout/Card';
 import '../contentDisplay.css';
 import Octocat from '../../Octocat.jpg';
 import LinkedIn from '../../LinkedIn.png';

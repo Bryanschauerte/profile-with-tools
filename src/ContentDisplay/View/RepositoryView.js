@@ -1,7 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import prettydate from 'pretty-date';
-import Card from '../../Layout/Card';
 import '../contentDisplay.css';
 
 const RepositoryView = ({ repo, repoIndex }) => {

@@ -1,20 +1,20 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import './BackgroundSVG.css';
 
 const BackgroundSVG = ({ showSVGAnimation }) => {
 
     function _generateCircles(){
 
         let inputColorObj = {
+            bottomLeft:'#062f4f',
+            bottomRight:'#b82601',
             center:'#01b826',
             topCenter:'#0B1968',
             topLeft:'#0193b8',
-            topRight: '#813772',
-            bottomRight:'#b82601',
-            bottomLeft:'#062f4f'
+            topRight: '#813772'
         };
 
-        let center = inputColorObj.center;
         let topCenter = inputColorObj.topCenter;
         let topLeft = inputColorObj.topLeft;
         let topRight = inputColorObj.topRight;
@@ -22,20 +22,6 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
         let bottomLeft = inputColorObj.bottomLeft;
         let internals = [];
         let combinedElements = [];
-
-        //center
-        // for (var l = 1; l <= 5; l++){
-        //     let temp = l * 10;
-        //     temp += '%';
-        //     internals.push(
-        //         <circle
-        //             key={Math.random()}
-        //             cx="50%"
-        //             cy="50%"
-        //             r={temp} fillOpacity=".3"
-        //             fill={center}
-        //             className={showSVGAnimation ? 'SVGCcenter' : null} />);
-        // }
 
         //Top-Center
         for (var n = 1; n <= 5; n++){
@@ -49,7 +35,7 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
                     r={temp}
                     fillOpacity=".2"
                     fill={topCenter}
-                    className={showSVGAnimation ? 'SVGCtopCenter' : null} />);
+                    className={showSVGAnimation ? 'animate-svg' : null} />);
         }
 
         // Top-Left
@@ -64,7 +50,7 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
                     r={temp}
                     fillOpacity=".2"
                     fill={topLeft}
-                    className={showSVGAnimation ? 'SVGtopLeft' : null} />);
+                    className={showSVGAnimation ? 'animate-svg' : null} />);
         }
 
         // Top-Right
@@ -79,7 +65,7 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
                     r={temp}
                     fillOpacity=".1"
                     fill={topRight}
-                    className={showSVGAnimation ? 'SVGtopRight' : null}  />);
+                    className={showSVGAnimation ? 'animate-svg' : null}  />);
         }
 
         // Bottom-Right
@@ -94,7 +80,7 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
                     r={temp}
                     fillOpacity=".1"
                     fill={bottomRight}
-                    className={showSVGAnimation ? 'SVGbottomRight' : null} />);
+                    className={showSVGAnimation ? 'animate-svg' : null} />);
         }
 
         // Bottom-Left
@@ -109,7 +95,7 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
                     r={temp}
                     fillOpacity=".1"
                     fill={bottomLeft}
-                    className={showSVGAnimation ? 'SVGbottomLeft' : null} />);
+                    className={showSVGAnimation ? 'animate-svg' : null} />);
         }
 
         // Bottom-center
@@ -125,7 +111,7 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
                     r={temp}
                     fillOpacity=".1"
                     fill={bottomLeft}
-                    className={showSVGAnimation ? 'SVGbottomLeft' : null} />);
+                    className={showSVGAnimation ? 'animate-svg' : null} />);
         }
 
         combinedElements.push(

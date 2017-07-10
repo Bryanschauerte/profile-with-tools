@@ -33,8 +33,6 @@ class About extends Component {
     }
 
     render(){
-        console.log(this.props, 'this props');
-
         return this.renderRepos();
     }
 }
@@ -44,8 +42,6 @@ About.propTypes = {
     repositories: PropTypes.array
 };
 const mapStateToProps = (state)=> {
-    console.log(state, 'state');
-
     return {
         isLoading: getContentStateByName(state, 'loading'),
         repositories: getContentStateByName(state, 'repositories')

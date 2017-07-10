@@ -30,7 +30,7 @@
     position: relative;
     overflow-y: scroll;
     transition: all .3s ease 0s; }
-    .content-display-row .display-container .card-header .section-title {
+    .content-display-row .display-container .section-title {
       font-weight: 400;
       letter-spacing: 2px;
       background-color: #eee;
@@ -40,7 +40,7 @@
       height: 40px;
       text-align: right;
       width: 100%; }
-      .content-display-row .display-container .card-header .section-title .title {
+      .content-display-row .display-container .section-title .title {
         flex: 1 1 100%;
         padding: 0 50px;
         font-weight: 400;
@@ -226,8 +226,6 @@
       display: flex;
       position: relative;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
       flex: 1 1 100%;
       overflow-x: hidden; }
       @media (max-width: 420px) {
@@ -237,108 +235,156 @@
           .content-display-row .display-container.aboutActive .card-header {
             display: flex;
             justify-content: flex-start; } }
-      .content-display-row .display-container.aboutActive .inner-card {
-        flex: 2 1 90%;
-        margin: 0;
-        height: 100%; }
-        .content-display-row .display-container.aboutActive .inner-card .about-view {
-          letter-spacing: 2px;
-          height: 100%; }
-          .content-display-row .display-container.aboutActive .inner-card .about-view .content {
+      .content-display-row .display-container.aboutActive .section-title {
+        flex: 1 1 20%;
+        max-height: 40px; }
+        .content-display-row .display-container.aboutActive .section-title .title {
+          flex: 1 1 100%; }
+      .content-display-row .display-container.aboutActive .about-view {
+        display: flex;
+        flex: 2 1 80%;
+        letter-spacing: 2px;
+        margin-top: 20px; }
+        .content-display-row .display-container.aboutActive .about-view .content {
+          display: flex;
+          flex: 1 1 100%;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          position: relative; }
+          .content-display-row .display-container.aboutActive .about-view .content .about-title {
             display: flex;
-            flex: 1 1 100%;
             flex-direction: column;
+            justify-content: flex-start;
+            margin-left: 100%;
+            flex: 1 2 100px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 100px;
+            max-height: 100px;
+            width: 90%; }
+            @media (max-width: 420px) {
+              .content-display-row .display-container.aboutActive .about-view .content .about-title {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                min-height: 70px;
+                max-height: 100px; } }
+            .content-display-row .display-container.aboutActive .about-view .content .about-title .name {
+              display: flex;
+              flex: 1 1 auto;
+              min-height: 20px;
+              font-weight: 400;
+              font-size: 20px;
+              letter-spacing: 4px;
+              margin: 0;
+              width: 50%;
+              color: #4fc3f7; }
+              @media (max-width: 420px) {
+                .content-display-row .display-container.aboutActive .about-view .content .about-title .name {
+                  margin: 0;
+                  padding: 10px 0;
+                  width: 100%;
+                  justify-content: flex-end; } }
+            .content-display-row .display-container.aboutActive .about-view .content .about-title .sub-title {
+              display: flex;
+              flex: 1 1 auto;
+              margin: 0;
+              padding: 10px;
+              width: 50%;
+              color: #4fc3f7;
+              justify-content: flex-end;
+              align-items: center;
+              letter-spacing: 2px;
+              background-color: #eee;
+              border-top: 2px solid #4fc3f7; }
+              @media (max-width: 420px) {
+                .content-display-row .display-container.aboutActive .about-view .content .about-title .sub-title {
+                  margin: 0;
+                  padding: 10px 0;
+                  width: 100%;
+                  margin-left: auto; } }
+          .content-display-row .display-container.aboutActive .about-view .content .tinkering-container {
+            width: 90%;
+            margin-top: 20px;
+            letter-spacing: 2px;
+            flex: 2 1 100px;
+            max-height: 200px;
+            font-size: 20px; }
+            @media (max-width: 420px) {
+              .content-display-row .display-container.aboutActive .about-view .content .tinkering-container {
+                margin: 0;
+                padding: 10px 0; } }
+            .content-display-row .display-container.aboutActive .about-view .content .tinkering-container ul {
+              display: flex;
+              flex: 1 1 100%;
+              flex-direction: column;
+              font-size: 15px;
+              list-style: none;
+              width: 90%;
+              font-weight: 500;
+              margin-top: auto; }
+              @media (max-width: 420px) {
+                .content-display-row .display-container.aboutActive .about-view .content .tinkering-container ul {
+                  margin: 0;
+                  padding: 10px; } }
+              .content-display-row .display-container.aboutActive .about-view .content .tinkering-container ul li {
+                font-weight: 300;
+                flex-wrap: wrap;
+                padding: 1px;
+                width: 100%;
+                text-indent: 10px; }
+          .content-display-row .display-container.aboutActive .about-view .content .projects-container {
+            width: 90%;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            flex: 2 1 100px;
+            max-height: 200px;
+            font-size: 20px; }
+            @media (max-width: 420px) {
+              .content-display-row .display-container.aboutActive .about-view .content .projects-container {
+                margin: 0; } }
+            .content-display-row .display-container.aboutActive .about-view .content .projects-container ul {
+              margin-top: auto;
+              display: flex;
+              flex: 1 1 100%;
+              flex-direction: column;
+              font-size: 15px;
+              font-weight: 500;
+              list-style: none;
+              width: 90%; }
+              @media (max-width: 420px) {
+                .content-display-row .display-container.aboutActive .about-view .content .projects-container ul {
+                  margin: 0;
+                  padding: 10px; } }
+              .content-display-row .display-container.aboutActive .about-view .content .projects-container ul li {
+                font-weight: 300;
+                flex-wrap: wrap;
+                padding: 5px;
+                width: 100%;
+                text-indent: 10px; }
+          .content-display-row .display-container.aboutActive .about-view .content footer {
+            display: flex;
+            flex: 1 1 50px;
+            max-height: 60px;
             justify-content: center;
             align-items: center;
-            position: relative; }
-            .content-display-row .display-container.aboutActive .inner-card .about-view .content .about-title {
-              justify-content: space-between;
-              flex: 1 1 100px;
-              width: 90%; }
-              .content-display-row .display-container.aboutActive .inner-card .about-view .content .about-title .name {
-                display: flex;
-                flex: 1 1 60px;
-                font-weight: 400;
-                font-size: 20px;
-                letter-spacing: 4px;
+            margin-bottom: 10px; }
+            @media (max-width: 420px) {
+              .content-display-row .display-container.aboutActive .about-view .content footer {
                 margin: 0;
-                justify-content: flex-end;
-                color: #4fc3f7; }
-              .content-display-row .display-container.aboutActive .inner-card .about-view .content .about-title .sub-title {
-                display: flex;
-                flex: 1 1 100%;
-                width: 50%;
-                height: 30px;
-                margin: 0;
-                margin-left: auto;
-                color: #4fc3f7;
-                justify-content: flex-start;
-                align-items: center;
-                padding: 10px;
-                letter-spacing: 2px;
-                background-color: #eee;
-                border-top: 2px solid #4fc3f7; }
-            .content-display-row .display-container.aboutActive .inner-card .about-view .content .tinkering-container {
-              width: 90%;
-              margin-top: 20px;
-              letter-spacing: 2px;
-              flex: 1 1 100px; }
-              @media (max-width: 420px) {
-                .content-display-row .display-container.aboutActive .inner-card .about-view .content .tinkering-container {
-                  margin-top: 10px; } }
-              .content-display-row .display-container.aboutActive .inner-card .about-view .content .tinkering-container ul {
-                margin-top: 10px;
-                display: flex;
-                flex: 1 1 100%;
-                flex-direction: column;
-                font-size: 15px;
-                list-style: none;
-                width: 90%;
-                font-weight: 500; }
-                .content-display-row .display-container.aboutActive .inner-card .about-view .content .tinkering-container ul li {
-                  font-weight: 300;
-                  flex-wrap: wrap;
-                  padding: 1px;
-                  width: 100%;
-                  text-indent: 10px; }
-            .content-display-row .display-container.aboutActive .inner-card .about-view .content .projects-container {
-              width: 90%;
-              margin-top: 10px;
-              letter-spacing: 2px;
-              flex: 1 1 100px; }
-              .content-display-row .display-container.aboutActive .inner-card .about-view .content .projects-container ul {
-                margin-top: 10px;
-                display: flex;
-                flex: 1 1 100%;
-                flex-direction: column;
-                font-size: 15px;
-                font-weight: 500;
-                list-style: none;
-                width: 90%; }
-                .content-display-row .display-container.aboutActive .inner-card .about-view .content .projects-container ul li {
-                  font-weight: 300;
-                  flex-wrap: wrap;
-                  padding: 5px;
-                  width: 100%;
-                  text-indent: 10px; }
-            .content-display-row .display-container.aboutActive .inner-card .about-view .content footer {
+                padding: 10px; } }
+            .content-display-row .display-container.aboutActive .about-view .content footer a {
               display: flex;
-              flex: 1 1 50px;
-              max-height: 60px;
-              justify-content: center;
-              align-items: center;
-              margin-bottom: 10px; }
-              .content-display-row .display-container.aboutActive .inner-card .about-view .content footer a {
-                display: flex;
-                text-decoration: none;
+              text-decoration: none;
+              color: #4fc3f7;
+              cursor: pointer;
+              letter-spacing: 4px;
+              font-size: 17px;
+              transition: all .3s ease 0s; }
+              .content-display-row .display-container.aboutActive .about-view .content footer a:hover {
+                padding: 20px;
                 color: #4fc3f7;
-                cursor: pointer;
-                letter-spacing: 4px;
-                font-size: 17px;
-                transition: all .3s ease 0s; }
-                .content-display-row .display-container.aboutActive .inner-card .about-view .content footer a:hover {
-                  padding: 20px;
-                  color: #4fc3f7;
-                  background-color: #eee;
-                  letter-spacing: 8px;
-                  border: 0.5px solid #757575; }
+                background-color: #eee;
+                letter-spacing: 8px;
+                border: 0.5px solid #757575; }

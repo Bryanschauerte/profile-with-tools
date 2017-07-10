@@ -4,4 +4,13 @@
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 1; }
+  z-index: 1;
+  transition: all .3s ease .3s; }
+  .svg-background .animate-svg {
+    animation: pulse 10s ease-in-out infinite alternate; }
+
+@keyframes pulse {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(1.3); } }

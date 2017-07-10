@@ -8,7 +8,6 @@ import { getNavigationValueByName } from '../Navigation/navigationState';
 import classnames from 'classnames';
 import Card from '../Layout/Card';
 import About from './View/About';
-import Tools from './View/Tools';
 import Projects from './View/Projects';
 import Contact from './View/Contact';
 import Navigation from '../Navigation/Navigation';
@@ -23,9 +22,6 @@ class ContentDisplay extends Component {
             case 'projects':
                 return <Projects/>;
 
-            case 'tools':
-                return <Tools/>;
-
             case 'contact':
                 return <Contact showSVGAnimation={true}/>;
             default:
@@ -36,17 +32,21 @@ class ContentDisplay extends Component {
     render(){
 
         const displayClasses = classnames('display-container', {
-            inactive: (this.props.display === 'initial'),
-            toolsActive: (this.props.display === 'tools'),
-            projectsActive: (this.props.display === 'projects'),
+            aboutActive: (this.props.display === 'about'),
             contactActive: (this.props.display === 'contact'),
-            aboutActive: (this.props.display === 'about')
+            inactive: (this.props.display === 'initial'),
+            projectsActive: (this.props.display === 'projects')
         });
 
         return (
-            <Row className="content-display-row">
+            <Row doAnimation={this.props.display === 'initial'} className="content-display-row">
                 <Navigation/>
-                <Card className={displayClasses} headerComponent={<div className="section-title"><div className="title">{this.props.display.toUpperCase()}</div></div>}>
+                <Card className={displayClasses}>
+                    <div className="section-title">
+                        <div className="title">
+                            {this.props.display.toUpperCase()}
+                        </div>
+                    </div>
                     {this.renderDisplay()}
                 </Card>
             </Row>
@@ -54,16 +54,15 @@ class ContentDisplay extends Component {
     }
 }
 ContentDisplay.propTypes = {
-    display: PropTypes.string,
-    getRepositories: PropTypes.func,
     className: PropTypes.string,
     contentToShow: PropTypes.element,
+    display: PropTypes.string,
+    getRepositories: PropTypes.func,
     isLoading: PropTypes.bool,
     repositories: PropTypes.array
 };
 
 const mapStateToProps = (state)=> {
-    console.log(state, 'state');
 
     return {
         display: getNavigationValueByName(state, 'display')

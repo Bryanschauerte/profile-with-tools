@@ -20,7 +20,8 @@ class Navigation extends Component {
         });
 
         return (
-            <Card headerComponent={<HeaderComponent displayText="Welcome"/>} className={containerClassName}>
+            <Card className={containerClassName}>
+                <HeaderComponent displayText="Bryan Schauerte"/>
                 <NavigationContainer/>
             </Card>
         );

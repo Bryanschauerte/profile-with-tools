@@ -1,5 +1,4 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
 import '../contentDisplay.css';
 
 const About = () => (
@@ -38,7 +37,5 @@ const About = () => (
         </div>
     </article>
 );
-
-About.propTypes = {};
 
 export default About;
