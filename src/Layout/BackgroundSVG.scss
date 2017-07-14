@@ -7,7 +7,7 @@
     z-index: 1;
     transition: all .3s ease .3s;
 
-    .animate-svg {
+    #TopSVGCirles {
         animation: pulse 10s ease-in-out infinite alternate;
     }
 }

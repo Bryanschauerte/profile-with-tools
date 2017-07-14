@@ -6,7 +6,7 @@
   width: 100%;
   z-index: 1;
   transition: all .3s ease .3s; }
-  .svg-background .animate-svg {
+  .svg-background #TopSVGCirles {
     animation: pulse 10s ease-in-out infinite alternate; }
 
 @keyframes pulse {

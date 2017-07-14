@@ -55,8 +55,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    transition: all .3s ease 0s; }
+    width: 100%; }
     .navigation .navigation-container .navigation-button {
       display: inline-block;
       font-family: 'roboto', 'helvetica neue', 'helvetica';
@@ -67,7 +66,7 @@
       background: transparent;
       color: #000;
       border: 2px solid #eee;
-      transition: all .3s ease 0s;
+      transition: border, background-color, letter-spacing, opacity .3s ease 0s;
       letter-spacing: 1px;
       opacity: .5;
       cursor: pointer; }
@@ -99,7 +98,8 @@
     flex-direction: column;
     margin: 0;
     max-height: 120px;
-    max-width: 40%; }
+    max-width: 60%;
+    min-width: 40%; }
     @media (max-width: 420px) {
       .navigation.initial-nav {
         position: absolute;

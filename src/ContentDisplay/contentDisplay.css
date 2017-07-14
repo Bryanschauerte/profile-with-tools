@@ -25,6 +25,7 @@
     display: flex;
     flex: 1 1 100%;
     max-width: 100%;
+    flex-direction: column;
     height: 90%;
     width: 100%;
     position: relative;
@@ -60,7 +61,8 @@
     .content-display-row .display-container.projectsActive {
       display: flex;
       flex: 1 1 100%;
-      flex-direction: row; }
+      flex-direction: row;
+      min-height: 700px; }
       .content-display-row .display-container.projectsActive .repository-views {
         width: 100%;
         display: flex;
@@ -146,7 +148,8 @@
     .content-display-row .display-container.contactActive {
       display: flex;
       flex: 1 1 100%;
-      width: 100%; }
+      width: 100%;
+      min-height: 700px; }
       .content-display-row .display-container.contactActive .contact-container {
         display: flex;
         flex-direction: column;
@@ -227,6 +230,7 @@
       position: relative;
       flex-direction: column;
       flex: 1 1 100%;
+      min-height: 700px;
       overflow-x: hidden; }
       @media (max-width: 420px) {
         .content-display-row .display-container.aboutActive {
@@ -256,7 +260,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            margin-left: 100%;
+            margin-left: 90%;
             flex: 1 2 100px;
             flex-grow: 1;
             flex-shrink: 1;
