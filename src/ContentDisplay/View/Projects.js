@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getContentStateByName } from '../ContentState';
 import { makeGithubFetch } from '../ContentActions';
 import RepositoryView from './RepositoryView';
+import ReactLoading from 'react-loading';
 import '../contentDisplay.css';
 
 class About extends Component {
@@ -28,7 +29,11 @@ class About extends Component {
                 </div>
             );
         } else {
-            return null;
+            return <ReactLoading
+                        type="bubbles"
+                        color={'#4fc3f7'}
+                        height="667"
+                        width="375" />;
         }
     }
 

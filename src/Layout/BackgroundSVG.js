@@ -34,8 +34,7 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
                     cy="30%"
                     r={temp}
                     fillOpacity=".2"
-                    fill={topCenter}
-                    className={showSVGAnimation ? 'animate-svg' : null} />);
+                    fill={topCenter} />);
         }
 
         // Top-Left
@@ -49,8 +48,7 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
                     cy="20%"
                     r={temp}
                     fillOpacity=".2"
-                    fill={topLeft}
-                    className={showSVGAnimation ? 'animate-svg' : null} />);
+                    fill={topLeft} />);
         }
 
         // Top-Right
@@ -64,8 +62,7 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
                     cy="20%"
                     r={temp}
                     fillOpacity=".1"
-                    fill={topRight}
-                    className={showSVGAnimation ? 'animate-svg' : null}  />);
+                    fill={topRight}  />);
         }
 
         // Bottom-Right
@@ -79,8 +76,7 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
                     cy="100%"
                     r={temp}
                     fillOpacity=".1"
-                    fill={bottomRight}
-                    className={showSVGAnimation ? 'animate-svg' : null} />);
+                    fill={bottomRight} />);
         }
 
         // Bottom-Left
@@ -94,8 +90,7 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
                     cy="100%"
                     r={temp}
                     fillOpacity=".1"
-                    fill={bottomLeft}
-                    className={showSVGAnimation ? 'animate-svg' : null} />);
+                    fill={bottomLeft} />);
         }
 
         // Bottom-center
@@ -110,14 +105,14 @@ const BackgroundSVG = ({ showSVGAnimation }) => {
                     cy="70%"
                     r={temp}
                     fillOpacity=".1"
-                    fill={bottomLeft}
-                    className={showSVGAnimation ? 'animate-svg' : null} />);
+                    fill={bottomLeft} />);
         }
 
         combinedElements.push(
             <svg
                 key={Math.random()}
                 id="TopSVGCirles"
+                className={showSVGAnimation ? 'animate-svg' : null}
                 height="100%"
                 width="100%">
                 {internals}
